@@ -1,2 +1,18 @@
 logic building day 1 (dated 16/02/2024)
 Happy Coding!
+
+// # a basic program to print all the divisors of a number
+#include <iostream>
+// # we have created a namespace here :)
+namespace logic{
+void allDivisors(int N){
+    for(int i = 1; i*i <= N; i++){
+      if((N%i) == 0){
+          std::cout<<"a possible divisor would be: "<<i<<std::end;
+            if((N/i) != i){
+                std::cout<<"a possible divisor would be: "<<(N/i)<<std::end;
+            }
+      }
+    }
+ }
+}
