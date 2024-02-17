@@ -2,6 +2,8 @@ logic building day 1 (dated 16/02/2024)
 Happy Coding!
 
 // # a basic program to print all the divisors of a number
+// # with O((sqrt(n))) time complexity
+
 #include <iostream>
 // # we have created a namespace here :)
 namespace logic{
@@ -16,3 +18,73 @@ void allDivisors(int N){
     }
  }
 }
+
+
+logic building day 2 (dated 17/02/2024)
+Happy Coding!
+
+// be carefull while applying operations their are some times when we apply write logic but call to the result is missing
+
+// here is an example of the basic prime number operation 
+// O((sqrt(n))) time complexity
+
+#include <iostream>
+int PrimeOrNot(int Number){
+int counter = 0;
+    for(int i = 1; i<=Number; i++){
+        if((Number/i) == 0){
+                counter++;
+                if((Number/i) != 0){
+                        counter++;
+                }
+        }
+    }
+    return counter;
+}
+
+//Now Basic GCD approaches with different time complexities
+// with O(n)
+int GCD(int number1, int number2)
+{
+    int _max_factor = 0;
+    for(int i = 1; i <= number1; ++i){
+        if((number1%i) == 0){
+            if(_max_factor < i){
+                _max_factor  = i;
+            }
+        }
+    }
+    int _max_factor2 = 0;
+    for(int i = 1; i <= number2; ++i){
+        if((number2%i) == 0){
+            if(_max_factor >= i){
+                _max_factor2 = i;
+            }
+        }
+    }
+
+    if(_max_factor == _max_factor2){
+        return _max_factor;
+    }
+    else
+        return _max_factor;
+
+}
+
+//with O(sqrt(n))
+//gcd calc.
+
+int minimum(int Number1, int Number2){
+   return (Number1 > Number2) ? Number2: Number1;
+}
+int gcdCalc(int Number1, int Number2){
+    int _max_factor = 0;
+    for(int i = 1; i<=minimum(Number1,Number2); ++i){
+        if(((Number1%i) == 0 ) && ((Number2%i) == 0)){
+            _max_factor = i;
+        }
+    }
+   return _max_factor;
+}
+
+
